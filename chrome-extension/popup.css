@@ -1,0 +1,188 @@
+/* Basic styling for the popup */
+body {
+    font-family: sans-serif;
+    width: 300px; /* Fixed width for the popup */
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0; /* Light mode background */
+    color: #333; /* Light mode text */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    padding: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #0056b3; /* Header color */
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between controls */
+}
+
+#check-button, #refresh-button {
+    display: block; /* Make button take full width */
+    width: auto; /* Adjust width automatically */
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+#check-button {
+     width: 100%; /* Make check button full width */
+     margin-bottom: 10px; /* Add space below check button */
+}
+
+
+#check-button:hover, #refresh-button:hover {
+    background-color: #0056b3;
+}
+
+#refresh-button {
+    background-color: #6c757d; /* Different color for refresh */
+    padding: 5px 8px; /* Smaller padding */
+    font-size: 0.9em;
+}
+#refresh-button:hover {
+     background-color: #5a6268;
+}
+
+
+#results h2 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #0056b3;
+}
+
+#results ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+#results li {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+#loading, #error-message {
+    font-style: italic;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark-mode .header {
+    border-bottom: 1px solid #555;
+}
+
+body.dark-mode .header h1 {
+     color: #5cadff; /* Lighter blue for dark mode header */
+}
+
+
+body.dark-mode #check-button {
+    background-color: #5cadff;
+    color: #333;
+}
+
+body.dark-mode #check-button:hover {
+    background-color: #80c3ff;
+}
+
+body.dark-mode #refresh-button {
+    background-color: #adb5bd;
+    color: #333;
+}
+body.dark-mode #refresh-button:hover {
+    background-color: #ced4da;
+}
+
+
+body.dark-mode #results h2 {
+    color: #5cadff;
+}
+
+body.dark-mode #error-message {
+    color: #ff8080; /* Lighter red for dark mode errors */
+}
+
+/* Dark Mode Toggle Switch Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px; /* Smaller width */
+  height: 20px; /* Smaller height */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; /* Smaller handle */
+  width: 14px;  /* Smaller handle */
+  left: 3px;    /* Adjust position */
+  bottom: 3px;  /* Adjust position */
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #5cadff; /* Use theme color */
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #5cadff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px); /* Adjust translation distance */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px; /* Adjust radius */
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

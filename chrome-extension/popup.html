@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factifi Checker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Factifi Mock</h1>
+            <div class="controls">
+                 <button id="refresh-button" title="Refresh Check">🔄</button>
+                 <label class="switch" title="Toggle Dark Mode">
+                    <input type="checkbox" id="dark-mode-toggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <button id="check-button">Check This Page</button>
+
+        <div id="loading" style="display: none; text-align: center; margin-top: 15px;">
+            Checking...
+        </div>
+
+        <div id="results" style="display: none; margin-top: 15px;">
+            <h2>Results:</h2>
+            <p><strong>Confidence Score:</strong> <span id="confidence-score">N/A</span>%</p>
+            <p><strong>Citations:</strong></p>
+            <ul id="citations-list">
+                </ul>
+        </div>
+
+        <div id="error-message" style="display: none; color: red; margin-top: 15px; text-align: center;">
+            An error occurred. Please ensure the backend API is running.
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
