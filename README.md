@@ -25,7 +25,7 @@ factifi-mock/
 └── README.md                 # This file
 
 
-*(Note: You need to create the `images` folder and add placeholder or actual `.png` icons with the specified names and sizes.)*
+
 
 ## Setup and Running
 
@@ -70,10 +70,4 @@ e.  **Pin the Extension:** Find the "Factifi Mock Checker" extension in your too
 6.  Use the **toggle switch** in the popup header to switch between light and dark modes. The preference is saved.
 7.  Use the **refresh button** (🔄) to trigger the check again for the current page.
 
-## Assumptions and Limitations
 
-* **Mock API:** The backend API does *not* perform any real analysis. It returns randomly generated scores and citations for demonstration purposes.
-* **Text Extraction:** The extension uses `document.body.innerText` for text extraction. This is a basic method and might not optimally capture the main content on all webpage layouts. More sophisticated libraries like Mozilla's Readability.js could be used for better results.
-* **Error Handling:** Basic error handling is included, but complex network issues or edge cases might not be fully covered. Error messages are displayed in the popup.
-* **Security:** The Flask API uses CORS with `*` (allow all origins) for simplicity during development. In a real application, you should restrict this to your specific Chrome extension's ID (`chrome-extension://YOUR_EXTENSION_ID`). The `host_permissions` in `manifest.json` should also ideally be more specific if the API wasn't running locally.
-* **Icons:** Placeholder icons need to be created in the `images` folder.
